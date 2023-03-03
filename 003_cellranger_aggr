@@ -1,0 +1,20 @@
+#!/bin/bash -l
+#SBATCH --time=36:00:00
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=24
+#SBATCH --mem=160G
+#SBATCH --account=farrarm
+#SBATCH --mail-user=qiuxx221@umn.edu
+
+cd /home/farrarm/shared/riss/qiuxx221/hrishi_scatac032023/cellranger_aggr
+
+#SAMPLE=$1
+export PATH=/home/lmnp/qiuxx221/software/cellranger-atac-2.1.0:$PATH
+
+cellranger-atac aggr --id=Farrar_057_TCR \
+    --csv=/home/farrarm/shared/riss/qiuxx221/hrishi_scatac032023/cellranger_out/cell_ranger_aggr_lib.csv \
+    --reference=${CELLRANGERREF} \
+    --localcores=24 \
+    --localmem=160
