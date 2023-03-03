@@ -5,15 +5,13 @@
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-##SBATCH --cpus-per-task=24
-##SBATCH --mem=160G
 #SBATCH --cpus-per-task=48
 #SBATCH --mem=192G
 #SBATCH --account=farrarm
 #SBATCH --mail-user=qiuxx221@umn.edu
-##SBATCH --job-name=ATAC_d17
-##SBATCH --error=ATAC_d17.e%j
-##SBATCH --output=ATAC_d17.o%j
+#SBATCH --job-name=ATAC_d17
+#SBATCH --error=ATAC_d17.e%j
+#SBATCH --output=ATAC_d17.o%j
 
 export PATH=/home/lmnp/qiuxx221/software/cellranger-atac-2.1.0:$PATH
 
