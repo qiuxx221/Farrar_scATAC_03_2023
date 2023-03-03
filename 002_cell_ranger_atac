@@ -1,3 +1,4 @@
+######### day 17 samples 
 #!/bin/bash -l
 #SBATCH --time=36:00:00
 #SBATCH --time=24:00:00
@@ -28,3 +29,127 @@ cellranger-atac count --id=${SAMPLE}_test \
     --sample=${SAMPLE} \
     --localcores=48 \
     --localmem=190
+
+
+######### day 13 samples 
+
+#!/bin/bash -l
+#SBATCH --time=36:00:00
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=48
+#SBATCH --mem=192G
+#SBATCH --account=farrarm
+#SBATCH --mail-user=qiuxx221@umn.edu
+#SBATCH --job-name=ATAC_d13
+#SBATCH --error=ATAC_d13.e%j
+#SBATCH --output=ATAC_d13.o%j
+
+export PATH=/home/lmnp/qiuxx221/software/cellranger-atac-2.1.0:$PATH
+
+#SAMPLE=$1
+SAMPLE=Farrar_057_TCR_KI_d13_ATAC_FL
+CELLRANGERREF=/home/lmnp/shared/refdata-cellranger-arc-mm10-2020-A-2.0.0
+FASTQDIR=/home/farrarm/shared/riss/qiuxx221/hrishi_scatac032023/reads/d13/
+
+cd /scratch.global/qiuxx221/scatac_temp/d13
+cellranger-atac count --id=${SAMPLE}_test \
+    --reference=${CELLRANGERREF} \
+    --fastqs=${FASTQDIR} \
+    --sample=${SAMPLE} \
+    --localcores=48 \
+    --localmem=190
+
+######### day 13 samples 
+
+#!/bin/bash -l
+#SBATCH --time=36:00:00
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=48
+#SBATCH --mem=192G
+#SBATCH --account=farrarm
+#SBATCH --mail-user=qiuxx221@umn.edu
+#SBATCH --job-name=ATAC_d13
+#SBATCH --error=ATAC_d13.e%j
+#SBATCH --output=ATAC_d13.o%j
+
+export PATH=/home/lmnp/qiuxx221/software/cellranger-atac-2.1.0:$PATH
+
+#SAMPLE=$1
+SAMPLE=Farrar_057_TCR_KI_d13_ATAC_FL
+CELLRANGERREF=/home/lmnp/shared/refdata-cellranger-arc-mm10-2020-A-2.0.0
+FASTQDIR=/home/farrarm/shared/riss/qiuxx221/hrishi_scatac032023/reads/d13/
+
+cd /scratch.global/qiuxx221/scatac_temp/d13
+cellranger-atac count --id=${SAMPLE}_test \
+    --reference=${CELLRANGERREF} \
+    --fastqs=${FASTQDIR} \
+    --sample=${SAMPLE} \
+    --localcores=48 \
+    --localmem=190
+
+
+######### day 9 samples 
+
+#!/bin/bash -l
+#SBATCH --time=36:00:00
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=48
+#SBATCH --mem=192G
+#SBATCH --account=farrarm
+#SBATCH --mail-user=qiuxx221@umn.edu
+#SBATCH --job-name=ATAC_d9
+#SBATCH --error=ATAC_d9.e%j
+#SBATCH --output=ATAC_d9.o%j
+
+export PATH=/home/lmnp/qiuxx221/software/cellranger-atac-2.1.0:$PATH
+
+#SAMPLE=$1
+SAMPLE=Farrar_057_TCR_d9_ATAC_FL
+CELLRANGERREF=/home/lmnp/shared/refdata-cellranger-arc-mm10-2020-A-2.0.0
+FASTQDIR=/home/farrarm/shared/riss/qiuxx221/hrishi_scatac032023/reads/d9/
+
+cd /scratch.global/qiuxx221/scatac_temp/d9
+cellranger-atac count --id=${SAMPLE}_test \
+    --reference=${CELLRANGERREF} \
+    --fastqs=${FASTQDIR} \
+    --sample=${SAMPLE} \
+    --localcores=48 \
+    --localmem=190
+
+#########  naive samples 
+
+#!/bin/bash -l
+#SBATCH --time=36:00:00
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=48
+#SBATCH --mem=192G
+#SBATCH --account=farrarm
+#SBATCH --mail-user=qiuxx221@umn.edu
+#SBATCH --job-name=ATAC_naive
+#SBATCH --error=ATAC_naive.e%j
+#SBATCH --output=ATAC_naive.o%j
+
+export PATH=/home/lmnp/qiuxx221/software/cellranger-atac-2.1.0:$PATH
+
+#SAMPLE=$1
+SAMPLE=Farrar_057_TCR_naive_ATAC_FL
+CELLRANGERREF=/home/lmnp/shared/refdata-cellranger-arc-mm10-2020-A-2.0.0
+FASTQDIR=/home/farrarm/shared/riss/qiuxx221/hrishi_scatac032023/reads/naive/
+
+cd /scratch.global/qiuxx221/scatac_temp/naive
+cellranger-atac count --id=${SAMPLE}_test \
+    --reference=${CELLRANGERREF} \
+    --fastqs=${FASTQDIR} \
+    --sample=${SAMPLE} \
+    --localcores=48 \
+    --localmem=190
+
+
