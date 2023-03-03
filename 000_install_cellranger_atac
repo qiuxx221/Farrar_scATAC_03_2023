@@ -1,0 +1,10 @@
+# cell ranger atac is installed at 
+/home/lmnp/qiuxx221/software/cellranger-atac-2.1.0
+
+# reference is stored at 
+/home/lmnp/shared/refdata-cellranger-arc-mm10-2020-A-2.0.0
+
+
+#export path
+
+export PATH=/home/lmnp/qiuxx221/software/cellranger-atac-2.1.0:$PATH
