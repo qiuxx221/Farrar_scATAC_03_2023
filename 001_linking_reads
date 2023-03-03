@@ -1,1 +1,27 @@
+readlink -f /home/farrarm/data_delivery/umgc/2023-q1/230209_A00223_1006_BHV3VGDRX2/Farrar_Project_057/*.gz > readlink.txt
 
+# make dir and put reads in different time point
+
+mkdir d17
+mkdir d9
+mkdir d13
+mkdir naive
+grep d17 readlink.txt 
+grep d17 readlink.txt > d17/d17_reads_link.txt
+grep d13 readlink.txt > d13/d13_reads_link.txt
+grep d9 readlink.txt > d9/d9_reads_link.txt
+grep naive readlink.txt > naive/naive_reads_link.txt
+
+
+# go into each dir and link reads
+while read p; do  echo "ln -s "$p"" ; done < d17_reads_link.txt > ln_cmd.txt
+bash ln_cmd.txt
+
+while read p; do  echo "ln -s "$p"" ; done < d13_reads_link.txt > ln_cmd.txt
+bash ln_cmd.txt
+
+while read p; do  echo "ln -s "$p"" ; done < d9_reads_link.txt > ln_cmd.txt
+bash ln_cmd.txt
+
+while read p; do  echo "ln -s "$p"" ; done < naive_reads_link.txt > ln_cmd.txt
+bash ln_cmd.txt
