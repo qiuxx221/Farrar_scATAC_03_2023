@@ -1,0 +1,28 @@
+#!/bin/bash -l
+#SBATCH --time=36:00:00
+#SBATCH --time=24:00:00
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+##SBATCH --cpus-per-task=24
+##SBATCH --mem=160G
+#SBATCH --cpus-per-task=48
+#SBATCH --mem=192G
+#SBATCH --account=farrarm
+#SBATCH --mail-user=qiuxx221@umn.edu
+##SBATCH --job-name=ATAC_d17
+##SBATCH --error=ATAC_d17.e%j
+##SBATCH --output=ATAC_d17.o%j
+
+
+#SAMPLE=$1
+SAMPLE=Farrar_057_TCR_d17_ATAC_FL
+CELLRANGERREF=/home/lmnp/shared/refdata-cellranger-arc-mm10-2020-A-2.0.0
+FASTQDIR=/home/farrarm/shared/riss/qiuxx221/hrishi_scatac032023/reads/d17/
+
+cellranger-atac count --id=${SAMPLE}_test \
+    --reference=${CELLRANGERREF} \
+    --fastqs=${FASTQDIR} \
+    --sample=${SAMPLE} \
+    --localcores=48 \
+    --localmem=190
