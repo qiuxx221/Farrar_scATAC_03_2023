@@ -8,6 +8,6 @@ cat peak1_coordinates.bed peak2_coordinates.bed > all_peaks_links.bed
 
 
 ## extract information from the motif file 
-cut -f 3,4,5,8,10 -d "," motif_info_meta.csv | sed "s|,|\t|g" | grep -v motif.name > motifs_all.bed
+cut -f 3,4,5,8,10 -d "," motif_info_meta.csv | sort | uniq | sed "s|,|\t|g" | grep -v motif.name > motifs_all.bed
 
 
