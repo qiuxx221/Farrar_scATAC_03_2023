@@ -1,0 +1,13 @@
+# this is the code chunk to find motifs that are around 5kb of the gene, and it is also a DAP. link information will be provided as well. 
+
+## extract peaks connections
+cut -d "," -f 1 conns_day17_cluster1.csv | sort | uniq | sed "s|-|\t|g" | grep -v "Peak" > peak1_coordinates.bed
+cut -d "," -f 2 conns_day17_cluster1.csv | sort | uniq | sed "s|-|\t|g" | grep -v "Peak" > peak2_coordinates.bed
+
+cat peak1_coordinates.bed peak2_coordinates.bed > all_peaks_links.bed
+
+
+## extract information from the motif file 
+cut -f 3,4,5,8,10 -d "," motif_info_meta.csv | sed "s|,|\t|g" | grep -v motif.name > motifs_all.bed
+
+
