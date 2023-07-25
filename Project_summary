@@ -1,0 +1,59 @@
+This project is mostly focusing on motifs and co-accessbility between peaks. The goal of Hrishi is to find out TFs that protentially drives the divergence of different T cell types
+All final files are stored in directory: 
+/home/farrarm/shared/riss/qiuxx221/hrishi_scatac032023/cellranger_aggr/Farrar_057_TCR_groupinfo/outs
+
+What has been done: 
+1. 4 scATAC lib integration of 3 time points and 1 naive cell population. This naive cell population was later discared because it is very distinic from T cells
+2. UMAP on day 9, 13, and day 17 T cells
+
+
+3. Identified differential aceesible peaks between clusters by time point. Hrishi and Mike are very interested in day 9 cluster 1 and 4, day 13 cluster 1,2,5, and day 17 cluster 1,2,5
+a) DAP with highlight with a universal range for the coverage plot : 2023_March_scATAC_Farrar_scATAC_figure_universal_gene_range.Rmd
+b) compute all the coaccessibility on selected genes from Hrishi:
+2023_March_scATAC_Farrar_scATAC_co_accessible_selected_genes.Rmd
+2023_March_scATAC_Farrar_scATAC_co_accessible_selected_genes_day13.Rmd
+2023_March_scATAC_Farrar_scATAC_co_accessible_selected_genes_day17.Rmd
+c) DAPs
+# Higher in the second cluster 
+neg.day13.subset_cluster_1_2_peaks.csv
+neg.day13.subset_cluster_1_5_peaks.csv
+neg.day13.subset_cluster_2_5_peaks.csv
+neg.day17.subset_cluster_1_2_peaks.csv
+neg.day17.subset_cluster_1_5_peaks.csv
+neg.day17.subset_cluster_2_5_peaks.csv
+neg.day9.subset_cluster_1_4_peaks.csv
+
+# Higher in the first cluster 
+pos.day13.subset_cluster_1_2_peaks.csv
+pos.day13.subset_cluster_1_5_peaks.csv
+pos.day13.subset_cluster_2_5_peaks.csv
+pos.day17.subset_cluster_1_2_peaks.csv
+pos.day17.subset_cluster_1_5_peaks.csv
+pos.day17.subset_cluster_2_5_peaks.csv
+pos.day9.subset_cluster_1_4_peaks.csv
+
+
+4. Motifs enrichment was done for selected contrast
+a) Basic motifs enrichment analysis: 2023_March_scATAC_Farrar_motif_analysis_v2.Rmd
+
+b) Motifs activity computed by chromvar: 2023_March_scATAC_Farrar_motif_analysis_chromvar_selected_motifs.Rmd
+
+c) Motifs enrichment tests by clusters 
+2023_March_scATAC_Farrar_scATAC_day9_metadata_enrichmotif_split_by_cluster.Rmd
+2023_March_scATAC_Farrar_scATAC_day13_metadata_enrichmotif_split_by_cluster.Rmd
+2023_March_scATAC_Farrar_scATAC_day17_metadata_enrichmotif_split_by_cluster.Rmd
+
+
+5. circero co-accessibility was calcuated for peaks
+a) all filtered links (0.3)
+Cell_day13_cluster_1_links_0.3.RDS
+Cell_day13_cluster_2_links_0.3.RDS
+Cell_day13_cluster_5_links_0.3.RDS
+Cell_day17_cluster_1_links_0.3.RDS
+Cell_day17_cluster_2_links_0.3.RDS
+Cell_day17_cluster_5_links_0.3.RDS
+Cell_day9_cluster_1_links_0.3.RDS
+Cell_day9_cluster_4_links_0.3.RDS
+
+6. an approach of identify peaks with high co-accessibility, and have motifs, and also are DAP was analyzed, Rmarkdown file is named: 
+2023_March_scATAC_Farrar_scATAC_day17_unbiased.Rmd
