@@ -3,7 +3,7 @@ All final files are stored in directory:
 /home/farrarm/shared/riss/qiuxx221/hrishi_scatac032023/cellranger_aggr/Farrar_057_TCR_groupinfo/outs
 
 What has been done: 
-1. 4 scATAC lib integration of 3 time points and 1 naive cell population. This naive cell population was later discared because it is very distinic from T cells
+1. 4 scATAC lib integration of 3 time points and 1 naive cell population. This naive cell population was later discarded because it is very distinic from T cells
 2. UMAP on day 9, 13, and day 17 T cells
 
 
